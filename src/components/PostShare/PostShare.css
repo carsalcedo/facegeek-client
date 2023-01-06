@@ -47,3 +47,22 @@
     padding: 5px 20px;
     font-size: 12px;
 }
+
+.previewImage{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.timesContainer{
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+
+.previewImage>img{
+    width: 100%;
+    max-height: 20rem;
+    object-fit: cover;
+    border-radius: .5rem;
+}
