@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import ProfileImage from '../../img/profile.jpg';
 import './PostShare.css';
 import {UilScenery, UilPlayCircle, UilLocationPoint, UilSchedule, UilTimes} from '@iconscout/react-unicons';
-
+//quede en hora 1:08
 const PostShare = () => {
   const[image, setImage] = useState(null);
   const imageRef = useRef();
