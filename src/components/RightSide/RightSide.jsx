@@ -6,6 +6,7 @@ import comment from '../../img/comment.png'
 import {UilSetting} from '@iconscout/react-unicons'
 import TrendCard from '../TrendCard/TrendCard'
 import ShareModal from '../ShareModal/ShareModal'
+import { Link } from 'react-router-dom'
 
 
 const RightSide = () => {
@@ -13,7 +14,9 @@ const RightSide = () => {
   return (
     <div className="RightSide">
         <div className="navIcons">
-            <img src={home} alt="FaceGeek" />
+            <Link to='../home'>
+              <img src={home} alt="FaceGeek" />
+            </Link>
             <UilSetting/>
             <img src={noti} alt="FaceGeek" />
             <img src={comment} alt="FaceGeek" />

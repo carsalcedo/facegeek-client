@@ -4,7 +4,7 @@ import {UilPen} from '@iconscout/react-unicons'
 import ProfileModal from '../ProfileModal/ProfileModal'
 
 const InfoCard = () => {
-
+    //quede en hora 2:08:00
     const [modalOpen, setModalOpen] = useState(false)
 
   return (
