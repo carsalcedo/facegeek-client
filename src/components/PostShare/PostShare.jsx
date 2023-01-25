@@ -4,8 +4,9 @@ import './PostShare.css';
 import {UilScenery, UilPlayCircle, UilLocationPoint, UilSchedule, UilTimes} from '@iconscout/react-unicons';
 import { useDispatch, useSelector } from 'react-redux';
 import { uploadImage, uploadPost } from '../../actions/uploadAction';
-//quede en hora 1:32:00
+
 const PostShare = () => {
+  const loading = useSelector((state)=>state.postReducer.uploading)
   const[image, setImage] = useState(null);
   const imageRef = useRef();
   const dispatch = useDispatch();
@@ -17,6 +18,11 @@ const PostShare = () => {
       let img = e.target.files[0]
       setImage(img);
     }
+  };
+
+  const reset = () =>{
+    setImage(null);
+    desc.current.value= "";
   };
 
   const handleSubmit = (e) =>{
@@ -39,7 +45,8 @@ const PostShare = () => {
       }
     }
     dispatch(uploadPost(newPost))
-  }
+    reset()
+  };
 
   return (
     <div className="PostShare">
@@ -70,8 +77,8 @@ const PostShare = () => {
               Schedule
             </div>
 
-            <button className='button ps-button' onClick={handleSubmit}>
-              Share
+            <button className='button ps-button' onClick={handleSubmit} disabled={loading}>
+              {loading ? "Uploading" : "Share"}
             </button>
 
             <div style={{display: "none"}}>
