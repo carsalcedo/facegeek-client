@@ -3,6 +3,7 @@ import './FollowersCard.css'
 import {Followers} from '../Data/FollowersData.js'
 
 const FollowersCard = () => {
+  //quede en hora 2:39
   return (
     <div className="FollowersCard">
       <h3>Who is following you</h3>

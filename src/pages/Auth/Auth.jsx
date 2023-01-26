@@ -9,6 +9,7 @@ const Auth = () => {
   const dispatch = useDispatch()
   const loading = useSelector((state) => state.authReducer.loading);
   const [isSignUp, setIsSingUp] = useState(false);
+  const [error, setError] = useState(false)
   console.log(loading);
 
   const [data, setData] = useState({
@@ -31,9 +32,10 @@ const Auth = () => {
 
     if(isSignUp){
       data.password === data.confirmpass ? dispatch(signUp(data)) : setConfirmPass(false)
-     
+      
       }else{
         dispatch(login(data))
+        
       }
    }
 
@@ -115,6 +117,13 @@ const Auth = () => {
         <span style={{display: confirmPass? "none" : "block", color: 'red', fontSize: '12px', alignSelf: "flex-end", marginRight: "5px"}}>
           * Confirm Password is not same 
         </span>
+
+      {error 
+        ? (<span style={{display: "block", color: 'red', fontSize: '12px', alignSelf: "flex-end", marginRight: "5px"}}>
+            * username or password is incorrect
+          </span>)
+     : ("")} 
+        
 
         <div>
           <span style={{fontSize: '12px', cursor: 'pointer'}} 
