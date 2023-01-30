@@ -35,7 +35,6 @@ export const Post = ({data}) => {
         <span> {likes} likes</span>
 
         <div className="detail">
-            <span><b>{data.name}</b></span>
             <span> {data.desc}</span>
         </div>
     </div>
